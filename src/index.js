@@ -24,13 +24,9 @@ function tick() {
   milliseconds = milliseconds % second;
 
 
-  const formatted = days.toString().padStart(2, '0') + ':' + hours.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+  const formatted = days.toString().padStart(2, '0') + ':' + hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
   $timer.innerHTML = formatted;
-  console.log('tick');
 }
-
-console.log($timer);
-
 
 setInterval(tick, 1000);
 tick();
