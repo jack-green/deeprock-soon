@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: black url(./img/SpaceRigExterior.webp) center center;
+  background-size: cover;
+  font-family: 'Jura', sans-serif;
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

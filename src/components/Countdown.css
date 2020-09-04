@@ -1,0 +1,41 @@
+.Countdown {
+  border: 5px solid #e58f00;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.Countdown__icon {
+  background: #9e0603 url(../img/icon.png) center center no-repeat;
+  background-size: contain;
+  width: 120px;
+  height: 120px;
+}
+
+.Countdown__content {
+  padding: 20px;
+  text-align: center;
+}
+
+.Countdown__title {
+  text-transform: uppercase;
+}
+
+.Countdown__timer {
+  font-size: 60px;
+  line-height: 1;
+}
+
+.Countdown__timer span {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+
+.Countdown__timer span:not(:last-child):after {
+  content: ':';
+  position: absolute;
+  right:  -10px;
+}

@@ -1,0 +1,66 @@
+.Dwarf {
+  position: absolute;
+  bottom: -100px;
+  animation: bob .5s infinite  alternate;
+}
+
+.Dwarf__image {
+  width: 279px;
+  height: 300px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.Dwarf--right .Dwarf__image {
+  transform: scaleX(-1);
+}
+
+.Dwarf--scout .Dwarf__image {
+  background-image: url('../../img/scout.png');
+  animation-delay: .1s;
+}
+
+.Dwarf--gunner .Dwarf__image {
+  background-image: url('../../img/gunner.png');
+  animation-delay: .2s;
+}
+
+.Dwarf--engineer .Dwarf__image {
+  background-image: url('../../img/engineer.png');
+  animation-delay: .3s;
+}
+
+.Dwarf--driller .Dwarf__image {
+  background-image: url('../../img/driller.png');
+}
+
+.Dwarf__yell {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 0;
+  left: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.Dwarf__yell:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: rgba(255, 255, 255, 0.8);
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+@keyframes bob {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
