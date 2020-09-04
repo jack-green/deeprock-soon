@@ -29,7 +29,7 @@ const Dwarf = ({ name }:IDwarf) => {
   const [yell, setYell] = useState<string|null>(null)
 
   const turn = () => {
-    setStartX(endX === null ? makeEnd(true) : endX);
+    setStartX(endX === '' ? makeEnd(true) : endX);
     setEndX(makeEnd(direction === 'right'));
     setSpeed(makeSpeed());
     setDirection(direction === 'right' ? 'left' : 'right');
