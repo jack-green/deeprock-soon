@@ -11,7 +11,7 @@ interface IProps {
 
 const Dice = ({ onClick }:IProps) => (
     <button onClick={onClick} className="unstyled  dice">
-        <img src={diceImage} />
+        <img src={diceImage} alt="Randomizer" />
     </button>
 );
 

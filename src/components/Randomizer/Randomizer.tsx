@@ -63,7 +63,7 @@ const Randomizer = ({ show, onClose }:IProps) => {
             }
         }, delay);
         return () => clearTimeout(timer);
-    }, [delay]);
+    }, [delay, randomize]);
 
     const randomize = () => {
         let offset = 0;
