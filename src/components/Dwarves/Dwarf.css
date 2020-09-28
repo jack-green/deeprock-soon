@@ -2,6 +2,7 @@
   position: absolute;
   bottom: -100px;
   animation: bob .5s infinite  alternate;
+  pointer-events: all;
 }
 
 .Dwarf__image {

@@ -6,4 +6,5 @@
   height: 100%;
   overflow: hidden;
   z-index: 2;
+  pointer-events: none;
 }
