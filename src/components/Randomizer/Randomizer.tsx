@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import './Randomizer.scss';
 
@@ -47,25 +47,7 @@ const Randomizer = ({ show, onClose }:IProps) => {
         setDelay(startSpeed);
     }
 
-    useEffect(() => {
-        if (firstRun.current) {
-            firstRun.current = false;
-            return;
-        }
-        const timer = setTimeout(() => {
-            randomize();
-            const newDelay = delay * multiplier;
-            if (delay < endSpeed) {
-                console.log(Math.round(delay));
-                setDelay(newDelay);
-            } else {
-                setBusy(false);
-            }
-        }, delay);
-        return () => clearTimeout(timer);
-    }, [delay, randomize]);
-
-    const randomize = () => {
+    const randomize = useCallback(() => {
         let offset = 0;
         do {
             offset = 1 + Math.floor(Math.random() * 3);
@@ -78,7 +60,29 @@ const Randomizer = ({ show, onClose }:IProps) => {
         });
         setLastOffset(offset);
         setPlayers(newPlayers);
+    }, [lastOffset, players]);
+
+    const updateTimer = () => {
+        if (firstRun.current) {
+            firstRun.current = false;
+            return;
+        }
+        const timer = setTimeout(() => {
+            randomize();
+            const newDelay = delay * multiplier;
+            if (delay < endSpeed) {
+                console.log(Math.round(delay));
+                setDelay(newDelay);
+            } else {
+                console.log('doneski');
+                setBusy(false);
+                clearTimeout(timer);
+            }
+        }, delay);
+        return () => clearTimeout(timer);
     }
+
+    useEffect(updateTimer, [delay]);
 
     return (
         <div className={`randomizer__overlay  ${show ? 'visible' : ''}`}>

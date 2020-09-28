@@ -90,6 +90,10 @@ button.unstyled.randomizer__go {
     font-size: 20px;
     text-transform: uppercase;
     margin-top: 40px;
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
 }
 
 .randomizer__class {
